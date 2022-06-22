@@ -13,4 +13,5 @@ message GCDResponse {
 
 service GCDService {
   rpc Compute (GCDRequest) returns (GCDResponse) {}
-  rpc Compute1 (GCDRequest) returns (GCDResponse) {}ˇ
+  rpc Compute1 (GCDRequest) returns (GCDResponse) {}
+}

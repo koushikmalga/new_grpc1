@@ -36,7 +36,7 @@ func NewGCDServiceClient(cc grpc.ClientConnInterface) GCDServiceClient {
 
 func (c *gCDServiceClient) Compute(ctx context.Context, in *GCDRequest, opts ...grpc.CallOption) (*GCDResponse, error) {
 	out := new(GCDResponse)
-	err := c.cc.Invoke(ctx, "/pb.GCDService/Compute", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/GCDService/Compute", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func (c *gCDServiceClient) Compute(ctx context.Context, in *GCDRequest, opts ...
 
 func (c *gCDServiceClient) Compute1(ctx context.Context, in *GCDRequest, opts ...grpc.CallOption) (*GCDResponse, error) {
 	out := new(GCDResponse)
-	err := c.cc.Invoke(ctx, "/pb.GCDService/Compute1", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/GCDService/Compute1", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func _GCDService_Compute_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.GCDService/Compute",
+		FullMethod: "/GCDService/Compute",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GCDServiceServer).Compute(ctx, req.(*GCDRequest))
@@ -112,7 +112,7 @@ func _GCDService_Compute1_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.GCDService/Compute1",
+		FullMethod: "/GCDService/Compute1",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GCDServiceServer).Compute1(ctx, req.(*GCDRequest))
@@ -124,7 +124,7 @@ func _GCDService_Compute1_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GCDService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.GCDService",
+	ServiceName: "GCDService",
 	HandlerType: (*GCDServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

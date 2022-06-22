@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pb;
 
-option go_package = "./pb";
+option go_package = "github.com/koushikmalga/new_grpc1/pb";
 
 message GCDRequest {
   uint64 a = 1;
